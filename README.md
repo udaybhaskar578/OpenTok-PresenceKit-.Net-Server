@@ -1,10 +1,10 @@
 # OpenTok-PresenceKit-.Net-Server
-An OpenTok 1-to-1 solution focussed on adding presence to an application. Uses OpenTok .Net Server SDK.
+An OpenTok 1-to-1 solution focussed on adding presence to an application. Uses OpenTok .Net Server SDK. Also allows the users to archive their video session.
 
 ##Installation
 1. Clone Repository
 
-2. Go to App_Start/RouteConfig.cs file and replace the ApiKey and Secret settings with your OpenTok API key and secret, from the TokBox Dashboard. Also, generate one relayed session (you may use the Project Tools in the Dashboard) and use the Session ID to replace SessionId in the "HomeController".
+2. Go to App_Start/RouteConfig.cs file and replace the ApiKey and Secret settings with your OpenTok API key and secret, from the TokBox Dashboard.Generate a sessionId from the Project Tools in the TokBox Dashboard depending on your need, generally you can go with "RELAYED" Session.But if you want to archive the session then you have to generate a "ROUTED" sessionId. Use the generated Session ID to replace SessionId in the "HomeController".
 
 3. Restore the missing Nuget Packages
 
