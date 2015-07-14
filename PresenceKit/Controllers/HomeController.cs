@@ -25,6 +25,7 @@ namespace PresenceKit.Controllers
         public OpenTok Tk;
         // Replace these values with the values from your TokBox Dashboard
         const string Secret = "";
+        // Make sure that you get a Routed SessionId from your OpenTok Dashboard if you are trying to archive the session.
         const string SessionId = "";
         const int ApiKey = 45273832;
         [HttpGet]
@@ -55,7 +56,10 @@ namespace PresenceKit.Controllers
         [HttpPost]
         public ActionResult Chats()
         {
-            
+            /*********************************************************************************************************
+             * Use this if you would like to archive the chat session.
+             * var chatSession = Settings.Tk.CreateSession(mediaMode: MediaMode.ROUTED, archiveMode: ArchiveMode.ALWAYS);
+             *********************************************************************************************************/
             var chatSession = Settings.Tk.CreateSession();
             var sessionId = chatSession.Id;
             var token = chatSession.GenerateToken();
